@@ -147,6 +147,7 @@ vaja/
 │   ├── usage.md            # how to use the bot
 │   └── api.md              # API endpoints reference
 ├── mkdocs.yml              # MkDocs config
+├── Makefile                # dev shortcuts (make up, make migrate, make test)
 ├── docker-compose.yml
 ├── docker-compose.dev.yml  # for local development
 ├── .env.example
