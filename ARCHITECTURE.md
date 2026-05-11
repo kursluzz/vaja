@@ -121,6 +121,7 @@ vaja/
 ├── api/                    # FastAPI service
 │   ├── main.py
 │   ├── models/             # SQLAlchemy models
+│   ├── schemas/            # Pydantic models (request/response validation)
 │   ├── routers/            # endpoints
 │   │   ├── tasks.py        # tasks CRUD
 │   │   └── ai.py           # AI endpoints
