@@ -21,11 +21,11 @@ db-connect:
 	docker compose exec db psql -U taskuser -d taskdb
 
 # Database
-migrate:
-	alembic upgrade head
-
 migration:
 	alembic revision --autogenerate -m "$(name)"
+
+migrate:
+	alembic upgrade head
 
 rollback:
 	alembic downgrade -1
