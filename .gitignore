@@ -219,8 +219,15 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Docker
+# Docker override for local development
 docker-compose.override.yml
 
+# .env Override for local development
+.env.dev
+
+# PyCharm
 .idea/
+
+# Dockers data
 vaja_data/
+
