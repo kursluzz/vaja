@@ -1,5 +1,5 @@
-# SQLAlchemy models — imported here so Alembic can discover them automatically
-# Example: from api.models.user import User
+from api.models.enums import Priority
 from api.models.user import User
+from api.models.task import Task
 
-__all__ = ["User"]
+__all__ = ["User", "Task", "Priority"]
