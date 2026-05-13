@@ -231,3 +231,5 @@ docker-compose.override.yml
 # Dockers data
 vaja_data/
 
+# Personal Makefile
+/Makefile.local
