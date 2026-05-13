@@ -45,3 +45,9 @@ test:
 
 uv-sync:
 	uv sync --all-groups
+
+# Local API
+api-run:
+	uvicorn api.main:app --reload
+
+-include Makefile.local  # For personal stuff
