@@ -19,6 +19,7 @@ Groq Whisper (STT), ElevenLabs (TTS), Anthropic Claude Haiku.
 - **Async Python everywhere** — use `async`/`await`, never blocking calls
 - **`bot` never touches the database directly** — it calls `api` via HTTP only
 - **Always read `ARCHITECTURE.md`** before implementing a feature or making structural changes
+- **Language:** answer in Russian, but all code, comments, documentation, commit messages, PR descriptions, and GitHub content in English
 
 ---
 
