@@ -21,14 +21,15 @@
 - 📋 **Daily digest** — summary of today's tasks in one command
 - 💡 **Subtasks** — AI breaks down a big task into steps
 - 🔒 **Self-hosted** — all your data stays at home
+- 🧩 **Modular** — plug-and-play features (tasks, news, and more)
 
 ## Stack
 
 | Layer | Technology |
 |-------|-----------|
 | API | FastAPI + PostgreSQL |
-| AI logic | Claude (Anthropic) |
-| Voice | Whisper (Groq) |
+| AI logic | Claude (Anthropic) or Ollama (local) |
+| Voice | Whisper via Groq or faster-whisper (local) |
 | Interface | Telegram (aiogram) |
 | Deployment | Docker Compose + nginx |
 | SSL | Let's Encrypt (certbot) |
@@ -46,7 +47,7 @@
 ### Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/vaja.git
+git clone https://github.com/kursluzz/vaja.git
 cd vaja
 cp .env.example .env
 # fill .env with your keys
