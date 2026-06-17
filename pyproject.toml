@@ -38,6 +38,7 @@ dev = [
 [tool.ruff]
 target-version = "py312"
 line-length = 88
+exclude = ["alembic/"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]  # pycodestyle, pyflakes, isort, pyupgrade
