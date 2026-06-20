@@ -32,12 +32,13 @@ rollback:
 
 # Code quality
 lint:
-	ruff check --fix .
 	ruff format .
+	ruff check --fix .
 
 lint-check:
-	ruff check .
 	ruff format --check .
+	ruff check .
+
 
 # Testing
 test:
