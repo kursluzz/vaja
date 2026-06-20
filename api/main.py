@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 import api.modules.tasks  # noqa: F401
+from api.core import router as users_router
 from api.modules import REGISTRY
 
 app = FastAPI(
@@ -14,6 +15,8 @@ app = FastAPI(
 async def health() -> dict:
     return {"status": "ok"}
 
+
+app.include_router(users_router.router)
 
 for module in REGISTRY:
     app.include_router(module.router)
