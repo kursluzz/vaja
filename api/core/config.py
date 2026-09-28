@@ -1,4 +1,9 @@
+from pathlib import Path
+
 from pydantic_settings import BaseSettings
+
+# Resolve .env from the project root so it is found regardless of the working dir
+ENV_FILE = Path(__file__).resolve().parents[2] / ".env"
 
 
 class Settings(BaseSettings):
@@ -15,7 +20,7 @@ class Settings(BaseSettings):
             f"@{self.postgres_host}:{self.postgres_port}/{self.postgres_db}"
         )
 
-    model_config = {"env_file": ".env", "extra": "ignore"}
+    model_config = {"env_file": ENV_FILE, "extra": "ignore"}
 
 
 settings = Settings()
