@@ -1,77 +1,78 @@
 # vaja — Roadmap
 
 > Planned milestones, upcoming features, and nice-to-have ideas.
-> Concrete work items are tracked in [GitHub Issues](../../issues).
+> Progress is tracked in [GitHub Milestones](../../milestones) and [Issues](../../issues);
+> detailed specs and tasks live in [`sdd/`](sdd/).
 
 ---
 
 ## Milestones
 
-### v0.1 — Database & Basic CRUD API ⏳ 63%
-- [x] Project structure setup
-- [x] Docker Compose — db service
-- [x] SQLAlchemy async setup
-- [x] Users table migration
-- [x] Tasks table migration
-- [x] FastAPI app + health check
-- [x] Modular architecture refactor
-- [ ] Tasks CRUD endpoints
-- [ ] Users endpoints
-- [ ] Docker Compose — api service
-- [ ] Manual testing via Swagger UI
+### v0.1 — Database & Basic CRUD API
+- Project structure setup
+- Docker Compose — db service
+- SQLAlchemy async setup
+- Users table migration
+- Tasks table migration
+- FastAPI app + health check
+- Modular architecture refactor
+- Tasks CRUD endpoints
+- Users endpoints
+- Docker Compose — api service
+- Manual testing via Swagger UI
 
 ### v0.2 — AI Integration
-- [ ] Provider layer (LLMProvider / STTProvider abstractions)
-- [ ] Anthropic Claude Haiku provider
-- [ ] Groq Whisper STT provider
-- [ ] Parse natural language → structured task (`POST /tasks/parse`)
-- [ ] Prioritize task list (`POST /tasks/prioritize`)
-- [ ] Daily digest (`POST /tasks/summarize`)
-- [ ] Suggest subtasks (`POST /tasks/suggest`)
+- Provider layer (LLMProvider / STTProvider abstractions)
+- Anthropic Claude Haiku provider
+- Groq Whisper STT provider
+- Parse natural language → structured task (`POST /tasks/parse`)
+- Prioritize task list (`POST /tasks/prioritize`)
+- Daily digest (`POST /tasks/summarize`)
+- Suggest subtasks (`POST /tasks/suggest`)
 
 ### v0.3 — CI/CD & Deployment
-- [ ] GitHub Actions — lint + test + build
-- [ ] Push Docker image to GHCR
-- [ ] Watchtower auto-deploy on server
+- GitHub Actions — lint + test + build
+- Push Docker image to GHCR
+- Watchtower auto-deploy on server
 
 ### v0.4 — SSL & Certbot
-- [ ] nginx reverse proxy config
-- [ ] Let's Encrypt SSL via certbot
-- [ ] Auto-renewal setup
+- nginx reverse proxy config
+- Let's Encrypt SSL via certbot
+- Auto-renewal setup
 
 ### v0.5 — Telegram Bot
-- [ ] aiogram bot setup (webhook mode)
-- [ ] Auto-register user on first message
-- [ ] Text message handlers (tasks module)
-- [ ] Inline keyboard buttons
-- [ ] Callback handlers
+- aiogram bot setup (webhook mode)
+- Auto-register user on first message
+- Text message handlers (tasks module)
+- Inline keyboard buttons
+- Callback handlers
 
 ### v0.6 — Speech to Text
-- [ ] Groq Whisper STT provider implementation
-- [ ] Voice message handler in bot
-- [ ] faster-whisper local provider (alternative)
+- Groq Whisper STT provider implementation
+- Voice message handler in bot
+- faster-whisper local provider (alternative)
 
 ### v0.7 — Text to Speech
-- [ ] ElevenLabs TTS integration
-- [ ] `🔊 Listen` inline button
-- [ ] Voice reply on button press
+- ElevenLabs TTS integration
+- `🔊 Listen` inline button
+- Voice reply on button press
 
 ---
 
 ## Planned Features
 
 ### Local AI (v0.8)
-- [ ] Ollama LLM provider implementation
-- [ ] Switch between Anthropic / Ollama via `LLM_PROVIDER` env var
-- [ ] Docker Compose profile for Ollama service
-- [ ] faster-whisper STT provider implementation
+- Ollama LLM provider implementation
+- Switch between Anthropic / Ollama via `LLM_PROVIDER` env var
+- Docker Compose profile for Ollama service
+- faster-whisper STT provider implementation
 
 ### News Module (v0.9)
-- [ ] RSS feed aggregation (feedparser)
-- [ ] User interest configuration (`/news setup`)
-- [ ] Daily news digest (`/news today`)
-- [ ] Background news collection (APScheduler)
-- [ ] News module bot handlers
+- RSS feed aggregation (feedparser)
+- User interest configuration (`/news setup`)
+- Daily news digest (`/news today`)
+- Background news collection (APScheduler)
+- News module bot handlers
 
 ---
 

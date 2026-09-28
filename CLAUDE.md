@@ -13,13 +13,12 @@ Groq Whisper (STT), ElevenLabs (TTS), Anthropic Claude Haiku.
 
 ---
 
-## Core Rules
+\
 
 - **All code and comments in English** — no exceptions
 - **Async Python everywhere** — use `async`/`await`, never blocking calls
 - **`bot` never touches the database directly** — it calls `api` via HTTP only
-- **Always read `ARCHITECTURE.md`** before implementing a feature or making structural changes
-- **Language:** answer in Russian, but all code, comments, documentation, commit messages, PR descriptions, and GitHub content in English
+- **Always read `sdd/status.md`** first, then `sdd/spec.md` and `ARCHITECTURE.md` before implementing a feature or making structural changes
 
 ---
 
@@ -186,17 +185,24 @@ GET  /health           — health check
 
 ---
 
-## Implementing Issues — Step-by-Step Protocol
+## Specs & Issue Tracking
 
-When asked to implement an issue:
+The workflow follows the `/sdd` skill (Specification-Driven Development).
 
-1. **Present the plan** — outline approach and list all files to be created/changed
-2. **Implement step by step** — each step is one discrete action:
-   - create a branch
-   - add a single file
-   - commit and push
-3. **Wait for confirmation** before moving to the next step
-4. **Each step should be reviewable** — user can ask questions or propose changes
+| Lives in | What |
+|---|---|
+| `sdd/` | Requirements, feature specs, ADRs, detailed task list (`TASK-*` in `sdd/status.md`) |
+| GitHub Issues | Bugs, external feature requests, one issue per feature/milestone (not per TASK) |
+| GitHub Milestones | v0.x release progress |
+| `ROADMAP.md` | Vision and future ideas only, no progress tracking |
+| `docs/` | Public MkDocs site only, no internal specs |
+
+Rules:
+- **Link, don't copy:** an issue links to its spec section (`sdd/spec.md#...`), the spec links back to the issue (`Tracking: #N`)
+- **Progress is automatic:** PRs use `Closes #N`; never update GitHub manually to report progress
+- **`TASK-*` stays local:** never mirrored to GitHub
+- **Bugs go to GitHub Issues;** if a bug reveals a spec gap, the fix PR updates the spec too
+- **Spec conflicts with code:** stop and ask, do not silently pick one
 
 ---
 
@@ -209,7 +215,8 @@ When asked to implement an issue:
 | New file or folder in repo | `ARCHITECTURE.md` (Repository Structure) |
 | New `make` command | `Makefile` + this file (Makefile Commands section) |
 | New env variable | `.env.example` |
-| Progress on a milestone | `ARCHITECTURE.md` (Progress checklist) |
+| Progress on a task | `sdd/status.md` (Tasks) |
+| Requirement, spec or decision change | `sdd/spec.md`, `sdd/decisions/ADR-*.md` |
 
 ---
 

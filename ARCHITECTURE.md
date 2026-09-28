@@ -275,6 +275,7 @@ vaja/
 ├── nginx/
 │   └── nginx.conf
 ├── docs/                   # MkDocs (deployed to vaja.dev/docs)
+├── sdd/                    # specs: status.md, spec.md, decisions/ (ADRs)
 ├── Makefile
 ├── docker-compose.yml
 ├── docker-compose.dev.yml
@@ -348,27 +349,3 @@ GET  /health           — health check
 | ElevenLabs TTS | OpenAI TTS, Google TTS | Best voice quality, free tier available |
 | Inline keyboard for voice reply | Auto-send voice always | User chooses — saves API costs, better UX |
 | MkDocs + GitHub Pages | README only | Beautiful docs site, auto-deployed |
-
----
-
-## Progress
-
-- [x] Base FastAPI CRUD
-- [x] PostgreSQL + Alembic migrations (users + tasks tables)
-- [ ] Modular feature architecture (api/modules + bot/modules)
-- [ ] Provider layer (LLMProvider + STTProvider abstractions)
-- [ ] Anthropic provider implementation
-- [ ] Groq STT provider implementation
-- [ ] Ollama provider implementation
-- [ ] faster-whisper provider implementation
-- [ ] Multi-user support (auto-register on first message)
-- [ ] Docker Compose
-- [ ] nginx + Let's Encrypt
-- [ ] aiogram bot + webhook
-- [ ] Inline keyboard buttons
-- [ ] ElevenLabs integration (TTS)
-- [ ] News module
-- [ ] GitHub Actions CI/CD
-- [ ] Watchtower auto-deploy
-- [ ] MkDocs setup + GitHub Pages
-- [ ] README + documentation
