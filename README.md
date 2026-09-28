@@ -35,43 +35,25 @@
 | SSL | Let's Encrypt (certbot) |
 | CI/CD | GitHub Actions + Watchtower |
 
-## Quick Start
+## Status
 
-### Requirements
-- Docker + Docker Compose
-- Domain with A-record pointing to your server
-- Telegram Bot Token ([@BotFather](https://t.me/BotFather))
-- Anthropic API Key
-- Groq API Key
+vaja is in early development. The tasks CRUD API works; the Telegram bot, AI
+and voice features are in progress. See the [milestones](https://github.com/kursluzz/vaja/milestones)
+and [ROADMAP.md](ROADMAP.md). Server deployment instructions will be added with
+v0.3 (CI/CD & Deployment).
 
-### Installation
+## Development
 
 ```bash
 git clone https://github.com/kursluzz/vaja.git
 cd vaja
-cp .env.example .env
-# fill .env with your keys
-docker compose up -d
+make setup      # deps, local config, database, migrations
+make api-run    # http://localhost:8000/docs
 ```
 
-### Environment Variables
-
-```env
-# Telegram
-TELEGRAM_BOT_TOKEN=your_token
-
-# AI
-ANTHROPIC_API_KEY=your_key
-GROQ_API_KEY=your_key
-
-# Database
-POSTGRES_USER=taskuser
-POSTGRES_PASSWORD=your_password
-POSTGRES_DB=taskdb
-
-# Domain
-DOMAIN=yourdomain.com
-```
+Requirements: Docker and [uv](https://docs.astral.sh/uv/). See
+[CONTRIBUTING.md](CONTRIBUTING.md) for the full setup guide, debugging, and
+how to submit changes.
 
 ## Usage
 

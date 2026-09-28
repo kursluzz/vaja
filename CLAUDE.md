@@ -24,29 +24,11 @@ Groq Whisper (STT), ElevenLabs (TTS), Anthropic Claude Haiku.
 
 ## Git Workflow
 
-### Commits — Conventional Commits
-```
-feat: add voice message handler
-fix: correct task due_date parsing
-chore: update dependencies
-docs: add API endpoint examples
-refactor: extract claude service to separate module
-test: add tasks CRUD integration tests
-```
-
-### Branches
-```
-feat/5-telegram-bot-setup
-fix/12-voice-handler-crash
-chore/3-watchtower-config
-```
-Format: `type/issue-number-short-description`
-
-### Flow
-1. Create branch from `main`
-2. Implement feature
-3. Open PR → merge to `main`
-4. One feature per branch, one logical change per commit
+Branch naming, Conventional Commits and the PR flow are defined in
+`CONTRIBUTING.md` ("Making a change"). Follow it exactly:
+- Branch: `type/issue-number-short-description`, created from `main`
+- One feature per branch, one logical change per commit
+- PR description contains `Closes #N`
 
 ---
 
@@ -106,7 +88,7 @@ vaja/
 ├── docs/                   # MkDocs (deployed to vaja.dev/docs)
 ├── Makefile
 ├── docker-compose.yml
-├── docker-compose.dev.yml
+├── docker-compose.override.example.yml
 ├── pyproject.toml
 ├── .env.example
 ├── ARCHITECTURE.md
@@ -118,15 +100,24 @@ vaja/
 ## Makefile Commands
 
 ```bash
-make up           # docker compose up -d
-make down         # docker compose down
-make logs         # follow api logs
+make setup        # first-time local setup: deps, .env, override, db, migrations
+make db-up        # start PostgreSQL
+make api-run      # run the API locally with --reload
+make up / down    # docker compose up -d / down
+make ps           # docker compose ps
+make api-logs     # follow api logs
+make db-logs      # db logs
+make db-connect   # psql inside the db container
 make migrate      # alembic upgrade head
-make migration    # alembic revision --autogenerate -m "name"
+make migration name="..."  # alembic revision --autogenerate
 make rollback     # alembic downgrade -1
+make lint         # ruff format + ruff check --fix
+make lint-check   # ruff format --check + ruff check (CI)
 make test         # pytest
-make lint         # ruff check .
+make uv-sync      # uv sync --all-groups
 ```
+
+Full developer guide: `CONTRIBUTING.md`.
 
 ---
 

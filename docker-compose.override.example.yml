@@ -1,0 +1,7 @@
+# Local development overrides — copy to docker-compose.override.yml
+# (done automatically by `make setup`). Docker Compose merges it into
+# docker-compose.yml, so the API running on the host can reach the database.
+services:
+  db:
+    ports:
+      - "5432:5432"

@@ -1,3 +1,12 @@
+# Setup
+setup:
+	uv sync --all-groups
+	test -f .env || cp .env.example .env
+	test -f docker-compose.override.yml || \
+		cp docker-compose.override.example.yml docker-compose.override.yml
+	docker compose up -d --wait db
+	uv run alembic upgrade head
+
 # Docker
 up:
 	docker compose up -d
@@ -18,37 +27,37 @@ db-logs:
 	docker compose logs db
 
 db-connect:
-	docker compose exec db psql -U taskuser -d taskdb
+	docker compose exec db sh -c 'psql -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"'
 
 # Database
 migration:
-	alembic revision --autogenerate -m "$(name)"
+	uv run alembic revision --autogenerate -m "$(name)"
 
 migrate:
-	alembic upgrade head
+	uv run alembic upgrade head
 
 rollback:
-	alembic downgrade -1
+	uv run alembic downgrade -1
 
 # Code quality
 lint:
-	ruff format .
-	ruff check --fix .
+	uv run ruff format .
+	uv run ruff check --fix .
 
 lint-check:
-	ruff format --check .
-	ruff check .
+	uv run ruff format --check .
+	uv run ruff check .
 
 
 # Testing
 test:
-	pytest api/tests/
+	uv run pytest api/tests/
 
 uv-sync:
 	uv sync --all-groups
 
 # Local API
 api-run:
-	uvicorn api.main:app --reload
+	uv run uvicorn api.main:app --reload
 
 -include Makefile.local  # For personal stuff
