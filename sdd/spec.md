@@ -108,8 +108,8 @@ None implemented. `pyproject.toml` declares the `anthropic`, `groq` and
 
 | ID | Defect | Verified |
 |---|---|---|
-| D-001 | `TaskResponse` has `mode_config` instead of `model_config`, so Pydantic raises `PydanticUserError` on import and **the API cannot start** | yes — **fixed** |
-| D-002 | `alembic/env.py` imports the non-existent `api.models`, so `make migration` / `make migrate` fail (the imports were not updated after the module refactor) | yes — **fixed** |
+| D-001 | `TaskResponse` has `mode_config` instead of `model_config`, so Pydantic raises `PydanticUserError` on import and **the API cannot start** | yes — **fixed** (#22) |
+| D-002 | `alembic/env.py` imports the non-existent `api.models`, so `make migration` / `make migrate` fail (the imports were not updated after the module refactor) | yes — **fixed** (#22) |
 | D-003 | `Task.priority` is a `String` column but gets a `Priority` enum object, so the insert may be rejected by asyncpg | no *(inferred)* |
 | D-004 | `users.id` is `INTEGER` but `tasks.user_id` is `BIGINT` | yes (migrations) |
 | D-005 | `make test` targets `api/tests/`, which does not exist | yes |

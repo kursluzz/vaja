@@ -1,11 +1,11 @@
 # Status
 
-Phase: 0 - Baseline (gate not yet approved)
-Next: user reviews baseline + open questions, then Phase 1 (short discovery) / Phase 2 (requirements for v0.2-v0.7)
+Phase: 1 - Discovery (in progress)
+Next: discovery interview (users, languages, time zones, API exposure), then Phase 2 (requirements for v0.2-v0.7)
 
 ```text
-- [~] Phase 0: Baseline            → spec.md §0
-- [ ] Phase 1: Discovery           (short — product idea is mostly known)
+- [x] Phase 0: Baseline            → spec.md §0 (approved 2026-09-29, PR #24)
+- [~] Phase 1: Discovery           (short — product idea is mostly known)
 - [ ] Phase 2: Requirements & scope
 - [ ] Phase 3: Architecture & ADRs (convert ARCHITECTURE.md decision table to ADRs)
 - [ ] Phase 4: Feature specs       (AI parse/prioritize/summarize/suggest, bot flows, voice)
@@ -51,11 +51,11 @@ They are not yet converted to ADRs (Phase 3).
 
 ## Risks
 
-- R-001: The API does not start on `main` (D-001), and migrations are broken (D-002). See [spec.md §0.7](spec.md#07-known-defects-found-during-baseline).
+- ~~R-001: The API does not start on `main` (D-001), and migrations are broken (D-002).~~ Fixed in #22 / PR #23.
 - R-002: No tests exist, so the CI gate planned for v0.3 has nothing to run.
 - R-003: The same facts (structure, endpoints, schema) are described in CLAUDE.md, ARCHITECTURE.md and ROADMAP.md, and the copies already disagree (Q-002 to Q-005, Q-009).
 
 ## Tasks
 
 _Created in Phase 6._ Candidate fixes from the baseline, which don't depend on the spec:
-fix D-001, D-002, D-004 (+ migration), D-005 (add first test), D-006.
+D-003 (verify), D-004 (+ migration), D-005 (add first test), D-006. D-001 and D-002 are fixed (#22).
