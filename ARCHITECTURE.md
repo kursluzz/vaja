@@ -278,10 +278,11 @@ vaja/
 ├── sdd/                    # specs: status.md, spec.md, decisions/ (ADRs)
 ├── Makefile
 ├── docker-compose.yml
-├── docker-compose.dev.yml
+├── docker-compose.override.example.yml  # local dev overrides template
 ├── pyproject.toml
 ├── .env.example
 ├── ARCHITECTURE.md
+├── CONTRIBUTING.md         # dev setup + contribution workflow
 └── CLAUDE.md
 ```
 
