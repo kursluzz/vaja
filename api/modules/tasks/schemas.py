@@ -34,4 +34,4 @@ class TaskResponse(BaseModel):
     created_at: datetime
     updated_at: datetime
 
-    mode_config = {"from_attributes": True}
+    model_config = {"from_attributes": True}

@@ -1,9 +1,11 @@
 import asyncio
 from logging.config import fileConfig
 
-import api.models  # noqa: F401 — import all models so Alembic can detect them
 from sqlalchemy.ext.asyncio import create_async_engine
 
+# Import all models so Alembic can detect them
+import api.core.models  # noqa: F401
+import api.modules.tasks.models  # noqa: F401
 from alembic import context
 from api.core.config import settings  # noqa: F401
 from api.core.database import Base  # noqa: F401
